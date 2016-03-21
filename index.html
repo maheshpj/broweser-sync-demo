@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title> Browser Sync Demo </title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<script type="text/javascript" src="node_modules/angular/angular.js"></script>
-		<script type="text/javascript" src="/js/main.js"></script>
-	</head>
-	<body ng-app ng-init="poweredBy = 'GULP'">
-		<script>
-			alertBS();
-		</script>
-		
-		<h1> This is Browser Sync demo, ENJOY! </h1>
-		<h2> Powered by {{ poweredBy }} </h2>
+    <head>
+        <meta charset="utf-8">
+        <title> Browser Sync Demo </title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </head>
+    <body ng-app="BrowserSyncApp" ng-init="poweredBy = 'GULP'">
+        
+        <h1> This is Browser Sync demo, ENJOY! </h1>
+        <h2> Powered by {{ poweredBy }} </h2>
 
-		<div id="inner-div">
-			Enter some text: <input type="text" ng-model="name"> 
-			</br>
-			>> {{ name }}
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae lorem dictum sapien ultricies sodales. Mauris vel justo id mauris fringilla varius. Cras mattis vehicula neque non imperdiet. Mauris in purus luctus nulla vulputate rhoncus. Curabitur nulla orci, congue eget molestie ac, fringilla ut nibh. Curabitur hendrerit mauris consectetur justo ultrices, id pharetra dolor hendrerit. In auctor lectus nec quam venenatis, a venenatis nunc egestas. Nulla pulvinar finibus pellentesque.
+        <div id="inner-div" ng-controller="MainController">
+            Enter some text: <input type="text" ng-model="name"> 
+            </br>
+            >> {{ name }}
 
-			Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+            <textarea ng-show="isTextaraVisible()"></textarea>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae lorem dictum sapien ultricies sodales. Mauris vel justo id mauris fringilla varius. Cras mattis vehicula neque non imperdiet. Mauris in purus luctus nulla vulputate rhoncus. Curabitur nulla orci, congue eget molestie ac, fringilla ut nibh. Curabitur hendrerit mauris consectetur justo ultrices, id pharetra dolor hendrerit. In auctor lectus nec quam venenatis, a venenatis nunc egestas. Nulla pulvinar finibus pellentesque.
 
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sodales orci, quis dignissim enim. Mauris venenatis tortor erat, sit amet ullamcorper tortor aliquam id. Aenean diam tellus, malesuada eget vehicula eget, consectetur tempor quam. Sed ipsum lacus, sodales ac turpis sit amet, luctus tincidunt quam. Vivamus varius, lacus quis lacinia accumsan, libero ex fermentum risus, in mollis arcu ipsum eget nibh. Sed cursus mi vitae turpis faucibus, quis pretium orci molestie. Phasellus dictum mi diam, sit amet pulvinar justo sodales id. Sed nec posuere dui, sit amet dignissim lorem.
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
 
-			Proin viverra commodo diam in volutpat. 
-			</p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sodales orci, quis dignissim enim. Mauris venenatis tortor erat, sit amet ullamcorper tortor aliquam id. Aenean diam tellus, malesuada eget vehicula eget, consectetur tempor quam. Sed ipsum lacus, sodales ac turpis sit amet, luctus tincidunt quam. Vivamus varius, lacus quis lacinia accumsan, libero ex fermentum risus, in mollis arcu ipsum eget nibh. Sed cursus mi vitae turpis faucibus, quis pretium orci molestie. Phasellus dictum mi diam, sit amet pulvinar justo sodales id. Sed nec posuere dui, sit amet dignissim lorem.
 
-			<p>
-			Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc molestie eros non faucibus luctus. Vivamus feugiat accumsan odio, in viverra ante auctor eleifend. Ut tempor odio nec justo sodales fermentum. Etiam viverra sapien felis, ac sagittis odio faucibus sed. Suspendisse viverra, mi at ullamcorper convallis, nisl ligula interdum risus, a rhoncus mi dui ut libero. Vivamus lacinia arcu luctus dolor ornare lacinia. Nam a nibh consectetur erat pellentesque blandit ac tincidunt turpis. Quisque nec congue velit. Cras aliquet dapibus congue. Quisque elit nisi, sodales ac nunc ac, maximus vehicula metus. Morbi placerat ut nunc eget laoreet. Nullam eu ipsum nunc. Vestibulum consequat eleifend tellus, nec tempus eros consequat vel.
+            Proin viverra commodo diam in volutpat. 
+            </p>
 
-			Ut volutpat magna sapien, id maximus diam aliquam at. 
-			</p>
+            <p>
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc molestie eros non faucibus luctus. Vivamus feugiat accumsan odio, in viverra ante auctor eleifend. Ut tempor odio nec justo sodales fermentum. Etiam viverra sapien felis, ac sagittis odio faucibus sed. Suspendisse viverra, mi at ullamcorper convallis, nisl ligula interdum risus, a rhoncus mi dui ut libero. Vivamus lacinia arcu luctus dolor ornare lacinia. Nam a nibh consectetur erat pellentesque blandit ac tincidunt turpis. Quisque nec congue velit. Cras aliquet dapibus congue. Quisque elit nisi, sodales ac nunc ac, maximus vehicula metus. Morbi placerat ut nunc eget laoreet. Nullam eu ipsum nunc. Vestibulum consequat eleifend tellus, nec tempus eros consequat vel.
 
-			<p>
-			Nullam non turpis fringilla, fermentum elit nec, molestie nibh. Nunc sit amet dignissim arcu, eget commodo augue. Phasellus luctus, neque aliquet tempor cursus, lorem purus volutpat eros, quis viverra magna neque quis justo. Aenean ut lorem vitae quam mollis imperdiet. Vivamus laoreet mi ac erat viverra commodo. Quisque lobortis sollicitudin ipsum a placerat. Praesent porttitor ante non mauris posuere pharetra. Vivamus sollicitudin faucibus ipsum vel lobortis. Vestibulum blandit laoreet ex quis sollicitudin. Proin ultricies elit id laoreet pretium. Vestibulum volutpat, lorem a interdum bibendum, libero purus convallis lacus, et sollicitudin turpis lorem nec risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tortor erat, lobortis vel neque vitae, ornare tincidunt dui.
+            Ut volutpat magna sapien, id maximus diam aliquam at. 
+            </p>
 
-			Maecenas vel volutpat tortor, eget porta libero. 
-			</p>
+            <p>
+            Nullam non turpis fringilla, fermentum elit nec, molestie nibh. Nunc sit amet dignissim arcu, eget commodo augue. Phasellus luctus, neque aliquet tempor cursus, lorem purus volutpat eros, quis viverra magna neque quis justo. Aenean ut lorem vitae quam mollis imperdiet. Vivamus laoreet mi ac erat viverra commodo. Quisque lobortis sollicitudin ipsum a placerat. Praesent porttitor ante non mauris posuere pharetra. Vivamus sollicitudin faucibus ipsum vel lobortis. Vestibulum blandit laoreet ex quis sollicitudin. Proin ultricies elit id laoreet pretium. Vestibulum volutpat, lorem a interdum bibendum, libero purus convallis lacus, et sollicitudin turpis lorem nec risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tortor erat, lobortis vel neque vitae, ornare tincidunt dui.
 
-			<p>
-			Maecenas quis consequat lorem. Fusce quis ultrices magna. Curabitur eu lorem molestie, finibus nisi sed, tristique dui. Suspendisse rhoncus efficitur mi, et sodales sem iaculis tristique. Nulla pharetra ornare felis in venenatis. Aliquam ultrices ligula lectus, ut efficitur ex accumsan at. Praesent sem est, finibus a enim lobortis, egestas efficitur est. Aliquam in massa a mauris tristique malesuada. Sed gravida, velit in aliquam volutpat, eros arcu tristique massa, sit amet convallis massa turpis eu purus. Nam urna eros, vestibulum non tempor sed, rhoncus et velit. Integer purus leo, semper dignissim erat id, blandit pulvinar nisi. Aenean viverra dignissim ipsum. Pellentesque venenatis interdum purus, pharetra interdum diam. Donec venenatis tincidunt sapien, eu finibus neque tincidunt in. Sed eget lectus sit amet ligula euismod ultricies.
-			</p>
-		</div>	
-	</body>
+            Maecenas vel volutpat tortor, eget porta libero. 
+            </p>
+
+            <p>
+            Maecenas quis consequat lorem. Fusce quis ultrices magna. Curabitur eu lorem molestie, finibus nisi sed, tristique dui. Suspendisse rhoncus efficitur mi, et sodales sem iaculis tristique. Nulla pharetra ornare felis in venenatis. Aliquam ultrices ligula lectus, ut efficitur ex accumsan at. Praesent sem est, finibus a enim lobortis, egestas efficitur est. Aliquam in massa a mauris tristique malesuada. Sed gravida, velit in aliquam volutpat, eros arcu tristique massa, sit amet convallis massa turpis eu purus. Nam urna eros, vestibulum non tempor sed, rhoncus et velit. Integer purus leo, semper dignissim erat id, blandit pulvinar nisi. Aenean viverra dignissim ipsum. Pellentesque venenatis interdum purus, pharetra interdum diam. Donec venenatis tincidunt sapien, eu finibus neque tincidunt in. Sed eget lectus sit amet ligula euismod ultricies.
+            </p>
+        </div>  
+    </body>
 </html>
