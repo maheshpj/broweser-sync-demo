@@ -1,6 +1,6 @@
 angular.module('BrowserSyncApp.controllers', [
 ])
-    .controller('MainController', [
+    .controller('HomeController', [
         '$scope', 
         function($scope) {
             'use strict';
